@@ -73,7 +73,7 @@
     <mvc:default-servlet-handler/>
 
     <!-- 定义无需Controller的url<->view直接映射 -->
-    <mvc:view-controller path="/" view-name="redirect:index.html"/>
+    <mvc:view-controller path="/" view-name="redirect:login.html"/>
 
     <!-- 视图层配置 -->
     <!-- 配置SpringMVC的视图解析器 -->
@@ -92,7 +92,7 @@
     <!-- 配置freeMarker视图解析器 -->
     <bean id="viewResolverFtl"
           class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <property name="viewClass" value="com.tent.cloud.core.freemarker.extend.FreeMarkerViewExtend" />
+        <property name="viewClass" value="com.tent.master.core.freemarker.extend.FreeMarkerViewExtend" />
         <!-- 把Freemarker 扩展一下，把相关属性加入进去。。。 -->
         <property name="contentType" value="text/html; charset=utf-8" />
         <property name="cache" value="true" />
