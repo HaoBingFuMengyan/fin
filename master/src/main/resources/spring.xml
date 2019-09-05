@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- JSR303 Validator定义 -->
+    <!--<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />-->
+    <bean id="springContextHolder" class="com.tent.common.spring.SpringContextHolder" lazy-init="false"/>
+
+    <!-- 使用验证码 -->
+    <bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+                        <prop key="kaptcha.border">no</prop>
+                        <prop key="kaptcha.border.color">105,179,90</prop>
+                        <prop key="kaptcha.textproducer.font.color">red</prop>
+                        <prop key="kaptcha.image.width">200</prop>
+                        <prop key="kaptcha.textproducer.font.size">70</prop>
+                        <prop key="kaptcha.image.height">90</prop>
+                        <prop key="kaptcha.session.key">code</prop>
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                        <prop key="kaptcha.textproducer.font.names">Microsoft yahei,宋体,楷体,微软雅黑</prop>
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 开发环境 -->
+    <bean id="development"
+          class="com.tent.common.spring.Props">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath:application.dev.properties</value>
+                <value>classpath:config.properties</value>
+                <value>classpath:shiro-config.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 测试环境 -->
+    <bean id="test"
+          class="com.tent.common.spring.Props">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath:application.test.properties</value>
+                <value>classpath:config.properties</value>
+                <value>classpath:shiro-config.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 生产环境 -->
+    <bean id="production"
+          class="com.tent.common.spring.Props">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath:application.prod.properties</value>
+                <value>classpath:config.properties</value>
+                <value>classpath:shiro-config.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <import resource="applicationContext.xml"/>
+    <import resource="applicationContext-shiro.xml"/>
+</beans>
