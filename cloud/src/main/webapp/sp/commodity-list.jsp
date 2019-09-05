@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: haobingfu
-  Date: 2019/7/23
-  Time: 18:05
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="../include/taglib.jsp" %>
 
@@ -12,9 +5,29 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>品名管理</title>
+    <script src="${ctxStatic}/jquery/jquery-2.1.1.min.js"></script>
+    <script src="${ctxStatic}/layui-v2.4.5/layui.all.js"></script>
+    <script src="${ctxStatic}/js/common.js"></script>
+
+    <link rel="stylesheet" href="${ctxStatic}/layui-v2.4.5/css/layui.css">
+    <link rel="stylesheet" href="${ctxStatic}/css/common.css">
+
+    <script type="text/javascript">
+
+//        let   const
+        var a = 10;i
+        function foo() {
+            console.log(a);
+            var a = 20;
+        }
+        foo();
+    </script>
 </head>
 <body>
-    这里是commodity-list
+
+
 </body>
 </html>
+
