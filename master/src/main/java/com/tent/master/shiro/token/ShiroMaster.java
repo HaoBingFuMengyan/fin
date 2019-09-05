@@ -2,40 +2,40 @@ package com.tent.master.shiro.token;
 
 import com.google.code.kaptcha.Constants;
 import com.google.common.collect.Sets;
-import com.tent.common.shiro.ILoginUser;
 import com.tent.common.utils.B;
 import com.tent.common.utils.MD5;
 import com.tent.master.shiro.InvaildCaptchaException;
+import com.tent.service.impl.shiro.OperatorUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 
-public class ShiroUtils {
-    public ShiroUtils() {
+public class ShiroMaster {
+    public ShiroMaster() {
     }
 
     public static String getCurrentUserName() {
-        ILoginUser user = (ILoginUser)SecurityUtils.getSubject().getPrincipal();
+        OperatorUser user = (OperatorUser)SecurityUtils.getSubject().getPrincipal();
         return user == null?"":user.getLoginName();
     }
 
     public static String getCurrentName() {
-        ILoginUser user = (ILoginUser)SecurityUtils.getSubject().getPrincipal();
+        OperatorUser user = (OperatorUser)SecurityUtils.getSubject().getPrincipal();
         return user == null?"":user.getName();
     }
 
     public static String getCurrentMemberId() {
-        ILoginUser user = (ILoginUser) SecurityUtils.getSubject().getPrincipal();
+        OperatorUser user = (OperatorUser) SecurityUtils.getSubject().getPrincipal();
         return user == null?"":user.getMemberId();
     }
 
     public static String getCurrentUserId() {
-        ILoginUser user = (ILoginUser)SecurityUtils.getSubject().getPrincipal();
+        OperatorUser user = (OperatorUser)SecurityUtils.getSubject().getPrincipal();
         return user == null?"":user.getId();
     }
 
     public static boolean isAdmin() {
-        ILoginUser user = (ILoginUser)SecurityUtils.getSubject().getPrincipal();
+        OperatorUser user = (OperatorUser)SecurityUtils.getSubject().getPrincipal();
         if(user == null) {
             return false;
         } else {
@@ -44,8 +44,8 @@ public class ShiroUtils {
         }
     }
 
-    public static ILoginUser getCurrentUser() {
-        return (ILoginUser)SecurityUtils.getSubject().getPrincipal();
+    public static OperatorUser getCurrentUser() {
+        return (OperatorUser)SecurityUtils.getSubject().getPrincipal();
     }
 
     public static String EncodePassword(String spassword) {

@@ -1,6 +1,6 @@
 package com.tent.master.shiro;
 
-import com.tent.master.shiro.token.ShiroUtils;
+import com.tent.master.shiro.token.ShiroMaster;
 import org.apache.shiro.authc.UsernamePasswordToken;
 
 /**
@@ -43,7 +43,7 @@ public class ShiroUsernamePasswordToken extends UsernamePasswordToken {
     }
 
     public void CheckCaptcha() {
-        ShiroUtils.CheckCaptcha(this.checkword);
+        ShiroMaster.CheckCaptcha(this.checkword);
     }
 
     public String prePassword(String spassword) {
