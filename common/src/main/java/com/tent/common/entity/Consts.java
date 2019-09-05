@@ -75,6 +75,75 @@ public class Consts {
         }
     }
 
+    public static enum Sex implements IConst {
+        WOMAN(1, "女"),
+        MAN(0, "男");
+
+        public static Sex get(int i) {
+            switch (i) {
+                case 0:
+                    return Sex.MAN;
+                case 1:
+                    return Sex.WOMAN;
+            }
+            return null;
+        }
+
+        private int nCode;
+        private String nLable;
+
+        Sex(int nCode, String nLable) {
+            this.nCode = nCode;
+            this.nLable = nLable;
+        }
+
+        @Override
+        public int val() {
+            return this.nCode;
+        }
+
+        @Override
+        public String label() {
+            return this.nLable;
+        }
+
+        @Override
+        public int getVal() {
+            return this.nCode;
+        }
+
+        @Override
+        public String getLabel() {
+            return this.nLable;
+        }
+
+        @Override
+        public IConst[] vals() {
+            return BoolType.values();
+        }
+
+        @Override
+        public IConst valof(String str) {
+            return BoolType.valueOf(str);
+        }
+
+        @Override
+        public boolean isEq(int i) {
+            return i == nCode;
+        }
+
+        @Override
+        public boolean isNot(int i) {
+            return i != nCode;
+        }
+        public static Map<Integer,String> map(){
+            return  IConstUtils.map(BoolType.values());
+        }
+        public static String json(){
+            return JSONObject.wrap(map(),3).toString();
+        }
+    }
+
     //会员模块(hy)
     public static enum MemberType implements IConst {
         EXCHANGE(0, "交易中心"),

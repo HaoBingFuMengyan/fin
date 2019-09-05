@@ -1,13 +1,12 @@
 package com.tent.master.shiro.token;
 
-import com.tent.common.entity.UUser;
-import com.tent.common.shiro.ILoginUser;
 import com.tent.common.utils.Lg;
 import com.tent.master.shiro.ShiroUsernamePasswordToken;
+import com.tent.service.impl.hy.OperatorService;
 import com.tent.service.impl.hy.PermissionService;
 import com.tent.service.impl.hy.RoleService;
 import com.tent.service.impl.hy.UserService;
-import com.tent.service.impl.shiro.LoginUser;
+import com.tent.service.impl.shiro.OperatorUser;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.shiro.SecurityUtils;
@@ -30,6 +29,9 @@ public class SampleRealm extends AuthorizingRealm {
 	private UserService userService;
 
 	@Autowired
+	private OperatorService operatorService;
+
+	@Autowired
 	private RoleService roleService;
 
 	@Autowired
@@ -48,21 +50,18 @@ public class SampleRealm extends AuthorizingRealm {
 		token.CheckCaptcha();
 
 		Lg.info(SampleRealm.class,"验证当前Subject时获取到token为" + ReflectionToStringBuilder.toString(token, ToStringStyle.MULTI_LINE_STYLE));
-		LoginUser user = userService.findBySusernameOrSmobile(token.getUsername(),token.getUsername());
-		if(null == user){
+		OperatorUser operatorUser = operatorService.findOperatorByUserName(token.getUsername());
+		if(null == operatorUser){
 			throw new AccountException("帐号或密码不正确！");
 		/**
 		 * 如果用户的status为禁用。那么就抛出<code>DisabledAccountException</code>
 		 */
-		}else if(UUser._0.equals(user.getBisvalid())){
-			throw new DisabledAccountException("帐号已经禁止登录！");
 		}else{
 			this.setSession("currentUser",token.getUsername());
 			//更新登录时间 last login time
-//			user.setDlastloginsuccessdate(new Date());
-			userService.updateByPrimaryKeySelective(user);
+			operatorService.updateByPrimaryKeySelective(operatorUser);
 		}
-		return new SimpleAuthenticationInfo(user,user.getPassword(), getName());
+		return new SimpleAuthenticationInfo(operatorUser,operatorUser.getPassword(), getName());
     }
 
 	 /** 
@@ -72,14 +71,14 @@ public class SampleRealm extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 //		String userId = TokenManager.getUserId(); //静态类初始化失败，调用不成功(严重)
 
-		ILoginUser token = (ILoginUser) SecurityUtils.getSubject().getPrincipal();
+		OperatorUser token = (OperatorUser) SecurityUtils.getSubject().getPrincipal();
 
 		SimpleAuthorizationInfo info =  new SimpleAuthorizationInfo();
 		//根据用户ID查询角色（role），放入到Authorization里。
-		Set<String> roles = roleService.findRoleByUserId(token);
+		Set<String> roles = roleService.findRoleByOperatorId(token);
 		info.setRoles(roles);
 		//根据用户ID查询权限（permission），放入到Authorization里。
-		Set<String> permissions = permissionService.findPermissionByUserId(token);
+		Set<String> permissions = permissionService.findPermissionByOperatorId(token);
 		info.setStringPermissions(permissions);
         return info;  
     }  

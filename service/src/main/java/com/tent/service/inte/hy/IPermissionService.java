@@ -3,6 +3,7 @@ package com.tent.service.inte.hy;
 
 import com.tent.common.shiro.ILoginUser;
 import com.tent.po.entity.hy.Permission;
+import com.tent.service.impl.shiro.OperatorUser;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,8 @@ public interface IPermissionService {
 
     //根据用户ID查询权限（permission），放入到Authorization里。
     Set<String> findPermissionByUserId(ILoginUser token);
+
+    Set<String> findPermissionByOperatorId(OperatorUser token);
 
     int deleteByPrimaryKey(String id);
 

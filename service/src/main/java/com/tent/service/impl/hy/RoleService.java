@@ -6,6 +6,7 @@ import com.tent.common.shiro.ILoginUser;
 import com.tent.dao.hy.RoleDao;
 import com.tent.po.entity.hy.Role;
 import com.tent.service.impl.shiro.LoginUser;
+import com.tent.service.impl.shiro.OperatorUser;
 import com.tent.service.inte.hy.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -33,6 +34,12 @@ public class RoleService implements IRoleService{
         return map;
     }
 
+    @Override
+    public Set<String> findRoleByOperatorId(OperatorUser token) {
+
+        HashSet<String> map = Sets.newHashSet("admin");
+        return map;
+    }
 
     @Override
     public int deleteByPrimaryKey(Long id) {

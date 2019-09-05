@@ -4,8 +4,10 @@ import com.google.common.collect.Sets;
 import com.tent.common.shiro.ILoginUser;
 import com.tent.common.utils.B;
 import com.tent.common.utils.Lg;
+import com.tent.dao.hy.OperatorDao;
 import com.tent.dao.hy.PermissionDao;
 import com.tent.po.entity.hy.Permission;
+import com.tent.service.impl.shiro.OperatorUser;
 import com.tent.service.inte.hy.IPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,6 +25,9 @@ public class PermissionService implements IPermissionService{
     @Autowired
     private PermissionDao permissionDao;
 
+    @Autowired
+    private OperatorDao operatorDao;
+
     @Override
     public Set<String> findPermissionByUserId(ILoginUser token) {
 
@@ -38,6 +43,30 @@ public class PermissionService implements IPermissionService{
                     rs.add(b.trim());
             }
         }
+        Lg.info(PermissionService.class,"所有权限："+ rs.toString());
+
+        return rs;
+    }
+
+    @Override
+    public Set<String> findPermissionByOperatorId(OperatorUser token) {
+
+        Collection<String> db ;
+        Set<String> rs = Sets.newHashSet();
+
+        if(token.IsAdmin()){
+            db = operatorDao.getAllPurview();
+
+        }
+        else{
+//            db= operatorDao.getAllPurview(token.getId());
+        }
+//        for(String t:db){
+//            String[] as=t.split(",");
+//            for(String b:as){
+//                rs.add(b.trim());
+//            }
+//        }
         Lg.info(PermissionService.class,"所有权限："+ rs.toString());
 
         return rs;
