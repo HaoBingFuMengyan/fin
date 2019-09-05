@@ -26,9 +26,6 @@ import java.util.Set;
 public class SampleRealm extends AuthorizingRealm {
 
 	@Autowired
-	private UserService userService;
-
-	@Autowired
 	private OperatorService operatorService;
 
 	@Autowired
