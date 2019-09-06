@@ -1,6 +1,5 @@
 package com.tent.master.hy;
 
-import com.tent.common.shiro.ILoginUser;
 import com.tent.common.utils.S;
 import com.tent.master.shiro.token.ShiroMaster;
 import com.tent.service.impl.hy.OperatorService;
