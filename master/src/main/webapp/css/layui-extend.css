@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/* layui详情展示扩展样式 */
+.layui-info {
+    /* margin: 10px;*/
+}
+
+.layui-info .layui-form-item{
+    border-bottom: #eee 1px solid;
+    overflow: hidden;
+}
+
+.layui-info .layui-form-item:last-child{
+    border-bottom: #eee 0px solid;
+    margin-bottom: 0px;
+}
+
+.layui-info .layui-form-item .layui-inline{
+    width: 33%;
+    margin-right: 0;
+}
+.layui-info .layui-form-item .layui-inline .layui-form-label,
+.layui-info .layui-form-item .layui-block .layui-form-label{
+    padding: 6px 5px;
+}
+.layui-info .layui-form-item .layui-inline .layui-form-label,
+.layui-info .layui-form-item .layui-block .layui-form-label{
+    font-size: 13px !important;
+}
+.layui-info .layui-form-item .layui-inline .layui-input-inline{
+    width: auto;!important;
+    padding: 6px 5px;
+    line-height: 20px;
+    text-align: left;
+    font-size: 13px;
+}
+.layui-info .layui-inline .layui-input-inline em{
+    color: red;
+}
+
+.layui-info .layui-form-item .layui-block{
+    width: 100%;
+    vertical-align: middle;
+    position: relative;
+}
+
+.layui-info .layui-form-item .layui-block .layui-input-block{
+    width: auto;!important;
+    padding: 6px 5px;
+    line-height: 20px;
+    text-align: left;
+    font-size: 12px;
+    margin-left: 0px;
+}
+.top10{
+    margin-top: 10px;
+}
+
+/* layui表单样式扩展 */
+.layui-form-item {
+    margin-bottom: 5px;
+}
+.layui-form-item .layui-input-inline {
+    width: 270px ;
+}
+.layui-form-item .layui-input-text{
+    width: 842px ;
+}
+.layui-inline{
+    width:48%;
+}
+.layui-form-text{
+    width:99%;
+}
+.layui-form-label{
+    font-size: 10pt;
+}
+.layui-input-table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 14px 1px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: 1px 1px 20px rgba(0,0,0,.15)
+}
+.layui-input-block{
+    margin-left: 130px;
+}
+.layui-textarea{
+    min-height: 60px;
+    width: 100%;
+}
+.layui-elem-field legend{
+    font-size: 16px;
+}
+.layui-input-sm{
+    height: 30px;
+    line-height: 30px;
+}
+.layui-field-title {
+    margin: 10px 0 10px;
+}
+
+.layui-table-tool-temp .layui-table-tool-right{
+    float: right;
+}

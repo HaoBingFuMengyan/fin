@@ -92,7 +92,7 @@
 //                , {field: '', title: 'ID', width: 80, sort: true, fixed: 'left', totalRowText: '合计：'}
                 , {field: 'sobjectname', title: '名称', width: 120, sort: true}
                 , {field: 'scode', title: '代码', width: 120, sort: true}
-                , {field: 'sfromat', title: '格式', width: 120, sort: true}
+                , {field: 'sfromat', title: '格式', width: 150, sort: true}
                 , {field: 'istartno', title: '起始编号', width: 150}
                 , {field: 'iincrement', title: '增长阶梯', width: 120}
                 , {field: 'icurrentno', title: '当前序号', width: 120}
