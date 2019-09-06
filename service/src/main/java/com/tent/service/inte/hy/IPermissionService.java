@@ -14,8 +14,6 @@ public interface IPermissionService {
     //根据用户ID查询权限（permission），放入到Authorization里。
     Set<String> findPermissionByUserId(ILoginUser token);
 
-    Set<String> findPermissionByOperatorId(OperatorUser token);
-
     int deleteByPrimaryKey(String id);
 
     Permission insert(Permission record);

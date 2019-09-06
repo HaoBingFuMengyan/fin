@@ -2,10 +2,8 @@ package com.tent.master.shiro.token;
 
 import com.tent.common.utils.Lg;
 import com.tent.master.shiro.ShiroUsernamePasswordToken;
-import com.tent.service.impl.hy.OperatorService;
-import com.tent.service.impl.hy.PermissionService;
-import com.tent.service.impl.hy.RoleService;
-import com.tent.service.impl.hy.UserService;
+import com.tent.po.entity.hy.Purview;
+import com.tent.service.impl.hy.*;
 import com.tent.service.impl.shiro.OperatorUser;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -29,10 +27,10 @@ public class SampleRealm extends AuthorizingRealm {
 	private OperatorService operatorService;
 
 	@Autowired
-	private RoleService roleService;
+	private PartService partService;
 
 	@Autowired
-	private PermissionService permissionService;
+	private PurviewService purviewService;
 	
 	public SampleRealm() {
 		super();
@@ -72,10 +70,10 @@ public class SampleRealm extends AuthorizingRealm {
 
 		SimpleAuthorizationInfo info =  new SimpleAuthorizationInfo();
 		//根据用户ID查询角色（role），放入到Authorization里。
-		Set<String> roles = roleService.findRoleByOperatorId(token);
+		Set<String> roles = partService.findRoleByOperatorId(token);
 		info.setRoles(roles);
 		//根据用户ID查询权限（permission），放入到Authorization里。
-		Set<String> permissions = permissionService.findPermissionByOperatorId(token);
+		Set<String> permissions = purviewService.findPermissionByOperatorId(token);
 		info.setStringPermissions(permissions);
         return info;  
     }  

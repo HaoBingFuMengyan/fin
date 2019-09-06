@@ -13,9 +13,6 @@ public interface IRoleService {
     //根据用户ID查询角色（role），放入到Authorization里。
     Set<String> findRoleByUserId(ILoginUser token);
 
-    Set<String> findRoleByOperatorId(OperatorUser token);
-
-
     int deleteByPrimaryKey(Long id);
 
     int insert(Role record);

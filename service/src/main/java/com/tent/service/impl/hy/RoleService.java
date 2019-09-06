@@ -35,13 +35,6 @@ public class RoleService implements IRoleService{
     }
 
     @Override
-    public Set<String> findRoleByOperatorId(OperatorUser token) {
-
-        HashSet<String> map = Sets.newHashSet("admin");
-        return map;
-    }
-
-    @Override
     public int deleteByPrimaryKey(Long id) {
         return 0;
     }

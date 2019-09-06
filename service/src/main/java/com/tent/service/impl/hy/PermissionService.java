@@ -49,31 +49,6 @@ public class PermissionService implements IPermissionService{
     }
 
     @Override
-    public Set<String> findPermissionByOperatorId(OperatorUser token) {
-
-        Collection<String> db ;
-        Set<String> rs = Sets.newHashSet();
-
-        if(token.IsAdmin()){
-            db = operatorDao.getAllPurview();
-
-        }
-        else{
-//            db= operatorDao.getAllPurview(token.getId());
-        }
-//        for(String t:db){
-//            String[] as=t.split(",");
-//            for(String b:as){
-//                rs.add(b.trim());
-//            }
-//        }
-        Lg.info(PermissionService.class,"所有权限："+ rs.toString());
-
-        return rs;
-    }
-
-
-    @Override
     public int deleteByPrimaryKey(String id) {
         return 0;
     }
