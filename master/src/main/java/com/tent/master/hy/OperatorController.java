@@ -34,7 +34,7 @@ public class OperatorController {
         if (user == null) {
             return login(model);
         }
-        return S.toPage("hy/index");
+        return S.toPage("of/index");
     }
 
     @RequestMapping(value = "login.html", method = RequestMethod.POST)
