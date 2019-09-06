@@ -140,7 +140,7 @@
         <!-- 底部固定区域 -->
     </div>
 </div>
-<script src="${ctxStatic}/layui-v2.5.4/layui.all.js"></script>
+<script src="${ctxStatic}/layui-v2.5.4/layui/layui.all.js"></script>
 <script>
     //JavaScript代码区域
     var $ = layui.jquery,
