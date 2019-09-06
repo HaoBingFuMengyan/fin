@@ -9,7 +9,7 @@ import javax.persistence.MappedSuperclass;
  * Created by haobingfu on 2019/9/5.
  */
 @MappedSuperclass
-public class OperatorRoleBase extends BaseEntity {
+public class OperatorPartBase extends BaseEntity {
     private String soperatorid; //操作员ID String
     private String sroleid; //角色ID String
 

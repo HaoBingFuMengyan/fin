@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Created by haobingfu on 2019/9/5.
+ * 后台权限表
  */
 @Entity
 @Table(name = "hy_purview")
