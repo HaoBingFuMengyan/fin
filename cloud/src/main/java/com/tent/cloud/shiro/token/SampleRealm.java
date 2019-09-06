@@ -49,6 +49,8 @@ public class SampleRealm extends AuthorizingRealm {
 
 		Lg.info(SampleRealm.class,"验证当前Subject时获取到token为" + ReflectionToStringBuilder.toString(token, ToStringStyle.MULTI_LINE_STYLE));
 		LoginUser user = userService.findBySusernameOrSmobile(token.getUsername(),token.getUsername());
+		token.setId(user.getId());
+		token.prePassword(user.getPassword());
 		if(null == user){
 			throw new AccountException("帐号或密码不正确！");
 		/**
