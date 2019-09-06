@@ -163,7 +163,7 @@
             return;
         }
         var layid = $(this).attr("tab_id");
-        var text = $(this).text();
+        var text = $(this).text().substring(1,$(this).text().length);
         var dataurl = $(this).attr("data-url");
         var tabs = $(".layui-tab-title").children();
         var msg = true;

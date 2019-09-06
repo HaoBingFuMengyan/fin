@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.mbody{
+    margin:0 20px;
+}
+
+.height-100-perce{
+    height: 100%;
+}
+
+.top20{
+    margin-top: 20px;
+}
+
+.clear-margin-left{
+    margin-left: 0 !important;
+}
+
+em{
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.layui-form select{
+    display: block !important;
+}
