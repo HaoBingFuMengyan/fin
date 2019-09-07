@@ -38,7 +38,8 @@ public class PurviewService implements IPurviewService {
 
         }
         else{
-            db= operatorDao.getAllPurview(token.getId());
+//            db= operatorDao.getAllPurview(token.getId());
+            db = Sets.newHashSet();
         }
         for(String t:db){
             String[] as=t.split(",");

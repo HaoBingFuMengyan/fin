@@ -16,7 +16,7 @@ public interface OperatorDao extends BaseDao<Operator,String> {
     @Query("select distinct(p.surlpath) from  Purview p")
     Collection<String> getAllPurview();
 
-    @Query("select distinct(p.surlpath) from  Part ro join ro.purviewList p  where ro.id in (select o.sroleid from  OperatorPart o where o.soperatorid=?1 )")
-    Collection<String> getAllPurview(String id);
+//    @Query("select distinct(p.surlpath) from  Part ro join ro.purviewList p  where ro.id in (select o.sroleid from  OperatorPart o where o.soperatorid=?1 )")
+//    Collection<String> getAllPurview(String id);
 
 }

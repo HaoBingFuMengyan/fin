@@ -16,18 +16,18 @@ import java.util.List;
 @Table(name = "hy_part")
 public class Part extends PartBase {
 
-    private List<Purview> purviewList = Lists.newArrayList();
-
-    @ManyToMany()
-    @JoinTable(name = "hy_partpurview", joinColumns = {@JoinColumn(name = "spartid")}, inverseJoinColumns = {@JoinColumn(name = "spurviewid")})
-    @Fetch(FetchMode.SUBSELECT)
-    @Lazy(true)
-
-    public List<Purview> getPurviewList() {
-        return purviewList;
-    }
-
-    public void setPurviewList(List<Purview> purviewList) {
-        this.purviewList = purviewList;
-    }
+//    private List<Purview> purviewList = Lists.newArrayList();
+//
+//    @ManyToMany()
+//    @JoinTable(name = "hy_partpurview", joinColumns = {@JoinColumn(name = "spartid")}, inverseJoinColumns = {@JoinColumn(name = "spurviewid")})
+//    @Fetch(FetchMode.SUBSELECT)
+//    @Lazy(true)
+//
+//    public List<Purview> getPurviewList() {
+//        return purviewList;
+//    }
+//
+//    public void setPurviewList(List<Purview> purviewList) {
+//        this.purviewList = purviewList;
+//    }
 }

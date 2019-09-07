@@ -91,7 +91,7 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">名称<em>*</em></label>
                             <div class="layui-input-inline">
-                                <input type="text" name="srolename" id="srolename" value="${data.srolename}" class="layui-input" lay-verify="required" placeholder="(必填项)" autocomplete="off" >
+                                <input type="text" name="spartname" id="spartname" value="${data.spartname}" class="layui-input" lay-verify="required" placeholder="(必填项)" autocomplete="off" >
                             </div>
                         </div>
                     </div>
