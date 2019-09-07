@@ -1,8 +1,12 @@
 package com.tent.service.impl.hy;
 
 import com.google.common.collect.Sets;
+import com.tent.common.jpa.BaseDao;
+import com.tent.common.jpa.BaseService;
 import com.tent.common.utils.Lg;
 import com.tent.dao.hy.OperatorDao;
+import com.tent.dao.hy.PurviewDao;
+import com.tent.po.entity.hy.Purview;
 import com.tent.service.impl.shiro.OperatorUser;
 import com.tent.service.inte.hy.IPurviewService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +21,13 @@ import java.util.Set;
  */
 @Component
 @Transactional
-public class PurviewService implements IPurviewService {
+public class PurviewService extends BaseService<Purview> implements IPurviewService {
 
     @Autowired
     private OperatorDao operatorDao;
+
+    @Autowired
+    private PurviewDao purviewDao;
     /**
      * 根据用户ID查询权限（purview），放入到Authorization里。
      *
@@ -50,5 +57,15 @@ public class PurviewService implements IPurviewService {
         Lg.info(PermissionService.class,"所有权限："+ rs.toString());
 
         return rs;
+    }
+
+    @Override
+    protected BaseDao<Purview, String> getBaseDao() {
+        return this.purviewDao;
+    }
+
+    @Override
+    protected void BaseSaveCheck(Purview obj) {
+
     }
 }

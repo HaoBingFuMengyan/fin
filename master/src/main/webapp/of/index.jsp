@@ -57,7 +57,7 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a validate="false">系统管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a tab_id="2019042100001" data-url="http://www.taobao.com"><i
+                        <dd><a tab_id="2019042100001" data-url="${ctx}/hy/purview/index.shtml"><i
                                 class="layui-icon">&#xe613;</i>&nbsp;后台权限码管理</a>
                         </dd>
                         <dd><a tab_id="2019042100004" data-url="http://www.taobao.com"><i
