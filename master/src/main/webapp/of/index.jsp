@@ -17,7 +17,7 @@
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
 
-            <li class="layui-nav-item"><a top_id="001" validate="true">系统管理</a></li>
+            <li class="layui-nav-item"><a top_id="001" validate="true">管理员</a></li>
             <li class="layui-nav-item"><a top_id="002" validate="true">员工管理</a></li>
             <li class="layui-nav-item"><a top_id="003" validate="true">会员管理</a></li>
             <li class="layui-nav-item"><a top_id="004" validate="true">商品管理</a></li>
@@ -52,28 +52,37 @@
     <div class="layui-side layui-bg-black">
         <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
         <div class="layui-side-scroll">
-            <!-- 是否监制 -->
+            <!-- 管理员 -->
             <ul class="layui-nav layui-nav-tree" lay-filter="test" top_id="001">
                 <li class="layui-nav-item layui-nav-itemed">
                     <a validate="false">系统管理</a>
                     <dl class="layui-nav-child">
                         <dd><a tab_id="2019042100001" data-url="http://www.taobao.com"><i
-                                class="layui-icon">&#xe613;</i>&nbsp;监制权限码管理</a>
+                                class="layui-icon">&#xe613;</i>&nbsp;后台权限码管理</a>
                         </dd>
                         <dd><a tab_id="2019042100004" data-url="http://www.taobao.com"><i
                                 class="layui-icon">&#xe612;</i>&nbsp;会员权限码管理</a>
                         </dd>
-                        <dd><a tab_id="2019042100005" data-url="${ctx}/sys/sequence/list.shtml"><i class="layui-icon">&#xe60a;</i>&nbsp;生成编号</a>
+                        <dd><a tab_id="2019042100005" data-url="${ctx}/sys/sequence/list.shtml"><i class="layui-icon">&#xe60a;</i>&nbsp;生成编号器</a>
                         </dd>
                     </dl>
                 </li>
 
                 <li class="layui-nav-item">
-                    <a validate="false">解决方案</a>
+                    <a validate="false">员工账号</a>
                     <dl class="layui-nav-child">
-                        <dd><a>列表一</a></dd>
-                        <dd><a>列表二</a></dd>
-                        <dd><a>超链接</a></dd>
+                        <dd><a tab_id="2019090700001" data-url="${ctx}/hy/operator/list.shtml"><i
+                                class="layui-icon">&#xe66f;</i>&nbsp;员工账号</a></dd>
+                        <dd><a tab_id="2019090700002" data-url="${ctx}/hy/part/list.shtml"><i
+                                class="layui-icon">&#xe620;</i>&nbsp;角色管理</a></dd>
+                    </dl>
+                </li>
+
+                <li class="layui-nav-item">
+                    <a validate="false">会员管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a tab_id="2019090700003" data-url="${ctx}/hy/role/list.shtml"><i
+                                class="layui-icon">&#xe66f;</i>&nbsp;会员默认角色</a></dd>
                     </dl>
                 </li>
             </ul>

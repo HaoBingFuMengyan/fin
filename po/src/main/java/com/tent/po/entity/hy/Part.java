@@ -19,7 +19,7 @@ public class Part extends PartBase {
     private List<Purview> purviewList = Lists.newArrayList();
 
     @ManyToMany()
-    @JoinTable(name = "hy_partpurview", joinColumns = {@JoinColumn(name = "sroleid")}, inverseJoinColumns = {@JoinColumn(name = "spurviewid")})
+    @JoinTable(name = "hy_partpurview", joinColumns = {@JoinColumn(name = "spartid")}, inverseJoinColumns = {@JoinColumn(name = "spurviewid")})
     @Fetch(FetchMode.SUBSELECT)
     @Lazy(true)
 

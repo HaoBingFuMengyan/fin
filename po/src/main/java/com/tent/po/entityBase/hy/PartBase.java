@@ -11,9 +11,9 @@ import java.util.Date;
  */
 @MappedSuperclass
 public class PartBase extends BaseEntity {
-    private String srolecode; //角色编号 String
-    private String srolename; //角色名称 String
-    private Integer iroletype = 0; //角色类型 int
+    private String spartcode; //角色编号 String
+    private String spartname; //角色名称 String
+    private Integer iparttype = 0; //角色类型 int
     private Integer bissystem = 0; //是否系统角色 int
     private Integer imemberstatus = 0; //认证类型 int
     private Integer bisspecial = 0; //是否特殊 int
@@ -24,28 +24,28 @@ public class PartBase extends BaseEntity {
     private String smodifyoperator; //修改人 String
     private String sremark; //备注 String
 
-    public String getSrolecode() {
-        return srolecode;
+    public String getSpartcode() {
+        return spartcode;
     }
 
-    public void setSrolecode(String srolecode) {
-        this.srolecode = srolecode;
+    public void setSpartcode(String spartcode) {
+        this.spartcode = spartcode;
     }
 
-    public String getSrolename() {
-        return srolename;
+    public String getSpartname() {
+        return spartname;
     }
 
-    public void setSrolename(String srolename) {
-        this.srolename = srolename;
+    public void setSpartname(String spartname) {
+        this.spartname = spartname;
     }
 
-    public Integer getIroletype() {
-        return iroletype;
+    public Integer getIparttype() {
+        return iparttype;
     }
 
-    public void setIroletype(Integer iroletype) {
-        this.iroletype = iroletype;
+    public void setIparttype(Integer iparttype) {
+        this.iparttype = iparttype;
     }
 
     public Integer getBissystem() {

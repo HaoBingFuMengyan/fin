@@ -1,7 +1,10 @@
 package com.tent.service.impl.hy;
 
 import com.google.common.collect.Sets;
+import com.tent.common.jpa.BaseDao;
+import com.tent.common.jpa.BaseService;
 import com.tent.dao.hy.PartDao;
+import com.tent.po.entity.hy.Part;
 import com.tent.service.impl.shiro.OperatorUser;
 import com.tent.service.inte.hy.IPartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +19,7 @@ import java.util.Set;
  */
 @Component
 @Transactional
-public class PartService implements IPartService{
+public class PartService extends BaseService<Part> implements IPartService{
 
     @Autowired
     private PartDao partDao;
@@ -32,5 +35,15 @@ public class PartService implements IPartService{
 
         HashSet<String> map = Sets.newHashSet("admin");
         return map;
+    }
+
+    @Override
+    protected BaseDao<Part, String> getBaseDao() {
+        return this.partDao;
+    }
+
+    @Override
+    protected void BaseSaveCheck(Part obj) {
+
     }
 }
