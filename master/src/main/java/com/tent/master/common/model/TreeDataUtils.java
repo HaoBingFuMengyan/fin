@@ -1,13 +1,9 @@
 package com.tent.master.common.model;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.tent.common.jpa.Ajax;
-import com.tent.common.json.JSONObject;
 import com.tent.common.utils.B;
 import com.tent.po.entity.hy.Purview;
 import com.tent.po.vo.TreeVo;
-import net.sf.json.JSONSerializer;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
