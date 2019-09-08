@@ -72,7 +72,6 @@ public class TreeDataUtils {
         }
 
         model.addAttribute("data", "[" + com.alibaba.fastjson.JSONObject.toJSONString(root.getChildren().get(0), SerializerFeature.WriteMapNullValue) + "]");
-        System.out.println("这里是转成JSON字符串之后的结果："+JSONObject.wrap(root.getChildren().get(0)));
     }
 
 }
