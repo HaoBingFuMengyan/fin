@@ -19,6 +19,10 @@ public class TreeVo implements Serializable{
 
     private List<TreeVo> children = Lists.newArrayList();
 
+    private boolean spread;//节点是否默认初始展开
+    private boolean checked;//节点是否默认初始选中
+    private boolean disabled;//节点是否默认初始禁用
+
     public String getTitle() {
         return title;
     }
@@ -73,5 +77,29 @@ public class TreeVo implements Serializable{
 
     public void setChildren(List<TreeVo> children) {
         this.children = children;
+    }
+
+    public boolean isSpread() {
+        return spread;
+    }
+
+    public void setSpread(boolean spread) {
+        this.spread = spread;
+    }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
+    public boolean isDisabled() {
+        return disabled;
+    }
+
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
     }
 }

@@ -41,61 +41,19 @@
     </div>
 </div>
 
-
 <script type="text/javascript">
     layui.use(['tree', 'util'], function () {
-        var tree = layui.tree
-            , layer = layui.layer
+        var layer = layui.layer
             , util = layui.util
-
-            //模拟数据1
-            , data1 = [{
-                "title": '菜单列表',
-                "id": 999,
-                "code":null,
-                "leaf":false,
-                "bisroot":true,
-                "sparentid":null,
-                children: [{
-                    title: '江西'
-                    , id: 1
-                    , children: [{
-                        title: '南昌'
-                        , id: 1000
-                        , children: [{
-                            title: '青山湖区'
-                            , id: 10001
-                        }, {
-                            title: '高新区'
-                            , id: 10002
-                        }]
-                    }, {
-                        title: '九江'
-                        , id: 1001
-                    }]
-                }, {
-                    title: '山东',
-                    id: 89,
-                    children: [
-                        {
-                            title: '青岛'
-                            , id: 1001
-                        }, {
-                            title: '潍坊'
-                            , id: 1001
-                        }
-                    ]
-                }]
-            }]
+            , tree = layui.tree
 
         //仅节点左侧图标控制收缩
         tree.render({
             elem: '#test2'
-            , data: data1
-            , onlyIconControl: false  //是否仅允许节点左侧图标控制展开收缩
+            , data: ${data}
+            , onlyIconControl: true  //是否仅允许节点左侧图标控制展开收缩
             , click: function (obj) {
                 layer.msg(JSON.stringify(obj.data));
-                $('#officeContent').attr("src", "${ctx}/sys/sequence/list.shtml");
             }
         });
 

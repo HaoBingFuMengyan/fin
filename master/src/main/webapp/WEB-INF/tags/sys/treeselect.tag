@@ -21,5 +21,19 @@
         //是否限制选择，如果限制选择，设置属性disabled
         if ($('#${id}Search').hasClass('disabled'))
             return true;
+
+        //正常打开
+        top.layer.open({
+            type: 2,
+            title:'选择'+${title},
+            area: ['400px', '500px'],
+            content: ${url},
+            btn: ['确定', '关闭'],
+            yes: function(index,layero) {
+
+
+            },
+            cancel: function(index){}
+        });
     });
 </script>
