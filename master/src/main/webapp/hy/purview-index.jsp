@@ -20,7 +20,7 @@
             float: left;
             height: 800px;
             width: 17%;
-            border-right:1px solid #ccc;
+            border-right: 1px solid #ccc;
         }
 
         .right-content {
@@ -50,44 +50,41 @@
 
             //模拟数据1
             , data1 = [{
-                title: '江西'
-                , id: 1
-                , children: [{
-                    title: '南昌'
-                    , id: 1000
+                "title": '菜单列表',
+                "id": 999,
+                "code":null,
+                "leaf":false,
+                "bisroot":true,
+                "sparentid":null,
+                children: [{
+                    title: '江西'
+                    , id: 1
                     , children: [{
-                        title: '青山湖区'
-                        , id: 10001
+                        title: '南昌'
+                        , id: 1000
+                        , children: [{
+                            title: '青山湖区'
+                            , id: 10001
+                        }, {
+                            title: '高新区'
+                            , id: 10002
+                        }]
                     }, {
-                        title: '高新区'
-                        , id: 10002
+                        title: '九江'
+                        , id: 1001
                     }]
                 }, {
-                    title: '九江'
-                    , id: 1001
-                }, {
-                    title: '赣州'
-                    , id: 1002
-                }]
-            }, {
-                title: '广西'
-                , id: 2
-                , children: [{
-                    title: '南宁'
-                    , id: 2000
-                }, {
-                    title: '桂林'
-                    , id: 2001
-                }]
-            }, {
-                title: '陕西'
-                , id: 3
-                , children: [{
-                    title: '西安'
-                    , id: 3000
-                }, {
-                    title: '延安'
-                    , id: 3001
+                    title: '山东',
+                    id: 89,
+                    children: [
+                        {
+                            title: '青岛'
+                            , id: 1001
+                        }, {
+                            title: '潍坊'
+                            , id: 1001
+                        }
+                    ]
                 }]
             }]
 

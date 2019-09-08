@@ -70,9 +70,9 @@
             , cols: [[ //表头
                 {type: 'checkbox', fixed: 'left'}
 //                , {field: '', title: 'ID', width: 80, sort: true, fixed: 'left', totalRowText: '合计：'}
-                , {field: 'spartcode', title: '编号', width: 200, sort: true}
-                , {field: 'spartname', title: '名称', width: 200, sort: true}
-                , {field: 'sremark', title: '描述', width: 200, sort: true}
+                , {field: 'spurno', title: '编号', width: 200, sort: true}
+                , {field: 'spurname', title: '名称', width: 200, sort: true}
+                , {field: 'sdescription', title: '描述', width: 200, sort: true}
                 , {fixed: 'right', width: 200, toolbar: '#barDemo'}
             ]]
             , id: 'testReload'

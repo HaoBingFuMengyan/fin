@@ -85,9 +85,10 @@
                     <div class="layui-form-item">
                         <div class="layui-inline">
                             <label class="layui-form-label">父级菜单<em>*</em></label>
-                            <div class="layui-input-inline">
+                            <div class="layui-input-inline layui-input-inline-position">
                                 <%--sparentid--%>
-                                <input type="text" name="sparentname" id="sparentname" value="${data.sparentname}" class="layui-input" lay-verify="required" placeholder="(必填项)" autocomplete="off" >
+                                <input type="text" name="sparentname" id="sparentname" value="${data.sparentname}" class="layui-input" lay-verify="required" placeholder="(必填项)" autocomplete="off" readonly>
+                                <span class="layui-input-position"><i class="layui-icon">&#xe615;</i></span>
                             </div>
                         </div>
                     </div>
