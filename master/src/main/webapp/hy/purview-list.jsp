@@ -58,8 +58,8 @@
         //执行一个 table 实例
         var tableIns = table.render({
             elem: '#demo'
-            , height: 420
-            , url: '${ctx}/hy/purview/list.json?search_eq_sparentid=${param.id}' //数据接口
+            , height: 600
+            , url: '${ctx}/hy/purview/list.json?search_eq_sparentid=${param.id}&search_ne_spurname=菜单列表' //数据接口
             , title: ''
             , page: true //开启分页
 //            , toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
@@ -72,6 +72,7 @@
 //                , {field: '', title: 'ID', width: 80, sort: true, fixed: 'left', totalRowText: '合计：'}
                 , {field: 'spurno', title: '编号', width: 200, sort: true}
                 , {field: 'spurname', title: '名称', width: 200, sort: true}
+                , {field: 'surlpath', title: '权限码路径', width: 200, sort: true}
                 , {field: 'sdescription', title: '描述', width: 200, sort: true}
                 , {fixed: 'right', width: 200, toolbar: '#barDemo'}
             ]]
