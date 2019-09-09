@@ -1,9 +1,12 @@
 package com.tent.service.impl.hy;
 
 import com.google.common.collect.Sets;
+import com.tent.common.exception.E;
 import com.tent.common.jpa.BaseDao;
 import com.tent.common.jpa.BaseService;
+import com.tent.common.utils.B;
 import com.tent.common.utils.Lg;
+import com.tent.common.web.ParaUtils;
 import com.tent.dao.hy.OperatorDao;
 import com.tent.dao.hy.PurviewDao;
 import com.tent.po.entity.hy.Purview;
@@ -59,6 +62,48 @@ public class PurviewService extends BaseService<Purview> implements IPurviewServ
         return rs;
     }
 
+    /**
+     * 新增
+     *
+     * @param purview
+     */
+    @Override
+    public void newPurview(Purview purview) {
+
+        purview.setId(null);
+
+        Purview purview1 = this.purviewDao.findOne(purview.getSparentid());
+
+        if (purview1 == null)
+            E.S("父级菜单不存在");
+
+        purview.setSparentid(purview1.getId());
+        purview.setSparentname(purview1.getSpurname());
+        purview.setSpurno(ParaUtils.seqno("hy_purview"));
+        purview.setSurlpath(purview.getSurlpath());
+        purview.setSpurname(purview.getSpurname());
+
+    }
+
+    /**
+     * 修改
+     *
+     * @param purview
+     */
+    @Override
+    public void modifyPurview(Purview purview) {
+
+        Purview purview1 = this.purviewDao.findOne(purview.getSparentid());
+
+        if (purview1 == null)
+            E.S("父级菜单不存在");
+
+        purview.setSparentname(purview1.getSpurname());
+        purview.setSurlpath(purview.getSurlpath());
+        purview.setSpurname(purview.getSpurname());
+
+    }
+
     @Override
     protected BaseDao<Purview, String> getBaseDao() {
         return this.purviewDao;
@@ -66,6 +111,12 @@ public class PurviewService extends BaseService<Purview> implements IPurviewServ
 
     @Override
     protected void BaseSaveCheck(Purview obj) {
+        if (B.Y(obj.getSpurname()))
+            E.S("名称不能为空");
 
+        if (B.Y(obj.getId()))
+            this.newPurview(obj);
+        else
+            this.modifyPurview(obj);
     }
 }

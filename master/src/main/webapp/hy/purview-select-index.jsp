@@ -40,7 +40,7 @@
                 console.log(index);
                 parent.layer.close(index);
 
-                parent.layer.setAttrbuites();
+                $(window.parent.document).aaa();
             }
         });
 

@@ -37,7 +37,7 @@
         });
     });
 
-    function setAttrbuites(){
+    function aaa() {
         console.log('zheli shi fuqin yemian ');
     }
 </script>

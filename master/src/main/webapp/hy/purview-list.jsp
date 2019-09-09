@@ -59,7 +59,7 @@
         var tableIns = table.render({
             elem: '#demo'
             , height: 420
-            , url: '${ctx}/hy/purview/list.json' //数据接口
+            , url: '${ctx}/hy/purview/list.json?search_eq_sparentid=${param.id}' //数据接口
             , title: ''
             , page: true //开启分页
 //            , toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
@@ -84,7 +84,10 @@
                 , data = checkStatus.data; //获取选中的数据
             switch (obj.event) {
                 case 'add':
-                    pub.open('权限码添加', '${ctx}/hy/purview/add.shtml', '${ctx}/hy/purview/add.json',tableIns);
+                    if (pub.isnull('${param.id}'))
+                        layer.msg("请先选择父级菜单",{icon:2});
+                    else
+                        pub.open('权限码添加', '${ctx}/hy/purview/edit.shtml?id=${param.id}', '${ctx}/hy/purview/add.json',tableIns);
                     break;
                 case 'delete':
                     pub.delete(data,'${ctx}/hy/purview/delete.json','确定要删除吗？',true,true,tableIns);
@@ -103,7 +106,7 @@
             var data = obj.data //获得当前行数据
                 , layEvent = obj.event; //获得 lay-event 对应的值
             if (layEvent === 'detail') {
-                pub.detail('品种详情', '${ctx}/hy/purview/add.shtml?id=' + data.id);
+                pub.detail('权限码详情', '${ctx}/hy/purview/add.shtml?id=' + data.id);
             } else if (layEvent === 'del') {
                 pub.delete(data,'${ctx}/hy/purview/delete.json','确定要删除吗？',false,false,tableIns);
             } else if (layEvent === 'edit') {

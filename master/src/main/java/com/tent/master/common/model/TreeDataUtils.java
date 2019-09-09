@@ -66,7 +66,7 @@ public class TreeDataUtils {
 
             }
         }
-
+        System.out.println(com.alibaba.fastjson.JSONObject.toJSONString(root.getChildren(), SerializerFeature.WriteMapNullValue));
         model.addAttribute("data", "[" + com.alibaba.fastjson.JSONObject.toJSONString(root.getChildren().get(0), SerializerFeature.WriteMapNullValue) + "]");
     }
 

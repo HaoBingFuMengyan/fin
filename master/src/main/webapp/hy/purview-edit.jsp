@@ -76,7 +76,6 @@
 <body>
 <div class="mbody">
     <form id="formInput" class="layui-form" action="${ctx}/hy/purview/add.json" method="post" enctype="multipart/form-data" autocomplete="on">
-        <input type="hidden" name="id" value="${data.id}"/>
         <div class="layui-tab layui-tab-card">
             <ul class="layui-tab-title">
                 <li class="layui-this">菜单权限码</li>
@@ -91,8 +90,8 @@
                             <label class="layui-form-label">父级菜单<em>*</em></label>
                             <div class="layui-input-inline layui-input-inline-position">
                                 <%--<sys:treeselect id="purview" name="sparentid" value="${data.sparentid}" labelName="sparentname" labelValue="${data.sparentname}" title="菜单" url="${ctx}/hy/purview/select-index.shtml" cssClass="layui-input" cssStyle="background:#f5f5f5;"/>--%>
-                                    <input type="hidden"  name='sparentid' value="${purview.sparentid}" />
-                                    <input type="text" value="${purview.sparentname}" class="layui-input" lay-verify="required" placeholder="(必填项)" autocomplete="off" readonly style="background-color: #f5f5f5;">
+                                    <input type="hidden"  name='sparentid' value="${purview.id}" />
+                                    <input type="text" value="${purview.spurname}" class="layui-input" lay-verify="required" placeholder="(必填项)" autocomplete="off" readonly style="background-color: #f5f5f5;">
                             </div>
                         </div>
                     </div>
@@ -100,13 +99,13 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">权限码名称<em>*</em></label>
                             <div class="layui-input-inline">
-                                <input type="text" name="spurname" id="spurname" value="${data.spurname}" class="layui-input" lay-verify="required" placeholder="(必填项)" autocomplete="off" >
+                                <input type="text" name="spurname" id="spurname" value="" class="layui-input" lay-verify="required" placeholder="(必填项)" autocomplete="off" >
                             </div>
                         </div>
                         <div class="layui-inline">
                             <label class="layui-form-label">权限码路径</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="surlpath" id="surlpath" value="${data.surlpath}" class="layui-input" autocomplete="off" >
+                                <input type="text" name="surlpath" id="surlpath" value="" class="layui-input" autocomplete="off" >
                             </div>
                         </div>
                     </div>
@@ -114,7 +113,7 @@
                         <div class="layui-inline layui-form-text">
                             <label class="layui-form-label">说明</label>
                             <div class="layui-input-inline layui-input-text">
-                                <textarea class="layui-textarea" name="sdescription" id="sdescription">${data.sdescription}</textarea>
+                                <textarea class="layui-textarea" name="sdescription" id="sdescription"></textarea>
                             </div>
                         </div>
                     </div>

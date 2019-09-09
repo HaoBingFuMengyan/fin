@@ -53,7 +53,8 @@
             , data: ${data}
             , onlyIconControl: true  //是否仅允许节点左侧图标控制展开收缩
             , click: function (obj) {
-                layer.msg(JSON.stringify(obj.data));
+//                layer.msg(JSON.stringify(obj.data));
+                $('#officeContent').attr("src", "${ctx}/hy/purview/list.shtml?id="+obj.data.id);
             }
         });
 
