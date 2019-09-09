@@ -35,6 +35,14 @@ public class PurviewController extends BaseController<Purview, Purview> {
         return S.toPage(this.positionJsp() + "/" + this.prefixJsp() + "-index");
     }
 
+    @RequestMapping(value = "select-index.shtml")
+    public String selectIndex(Model model,HttpServletRequest request){
+        List<Purview> purviews = this.purviewService.findAll();
+
+        TreeDataUtils.treeData(request,model,purviews,false,false,false);
+
+        return S.toPage(this.positionJsp() + "/" + this.prefixJsp() + "-select-index");
+    }
 
     @Override
     public BaseService<Purview> getBaseService() {

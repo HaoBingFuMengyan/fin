@@ -11,9 +11,10 @@
 <%@ attribute name="url" type="java.lang.String" required="true" description="树结构数据地址"%>
 
 <%@ attribute name="cssClass" type="java.lang.String" required="false" description="css样式" %>
+<%@ attribute name="cssStyle" type="java.lang.String" required="false" description="css样式" %>
 
 <input type="hidden" id="${id}Id" name="${name}" value="${value}" class="${cssClass}" lay-verify="required" readonly/>
-<input type="text" name="${labelName}" id="${id}Name" value="${labelValue}" class="${cssClass}" lay-verify="required" placeholder="(必填项)" autocomplete="off" readonly><span class="layui-input-position" id="${id}Search"><i class="layui-icon">&#xe615;</i></span>
+<input type="text" name="${labelName}" id="${id}Name" value="${labelValue}" class="${cssClass}" style="${cssStyle}" lay-verify="required" placeholder="(必填项)" autocomplete="off" readonly><span class="layui-input-position" id="${id}Search"><i class="layui-icon">&#xe615;</i></span>
 
 
 <script type="text/javascript">
@@ -25,15 +26,18 @@
         //正常打开
         top.layer.open({
             type: 2,
-            title:'选择'+${title},
-            area: ['400px', '500px'],
-            content: ${url},
+            title:'选择${title}',
+            area: ['350px', '500px'],
+            content: '${url}',
             btn: ['确定', '关闭'],
             yes: function(index,layero) {
-
 
             },
             cancel: function(index){}
         });
     });
+
+    function setAttrbuites(){
+        console.log('zheli shi fuqin yemian ');
+    }
 </script>

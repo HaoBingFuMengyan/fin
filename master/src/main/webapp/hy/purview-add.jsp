@@ -86,9 +86,7 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">父级菜单<em>*</em></label>
                             <div class="layui-input-inline layui-input-inline-position">
-                                <%--sparentid--%>
-                                <input type="text" name="sparentname" id="sparentname" value="${data.sparentname}" class="layui-input" lay-verify="required" placeholder="(必填项)" autocomplete="off" readonly>
-                                <span class="layui-input-position"><i class="layui-icon">&#xe615;</i></span>
+                                <sys:treeselect id="purview" name="sparentid" value="${data.sparentid}" labelName="sparentname" labelValue="${data.sparentname}" title="菜单" url="${ctx}/hy/purview/select-index.shtml" cssClass="layui-input" cssStyle="background:#f5f5f5;"/>
                             </div>
                         </div>
                     </div>
